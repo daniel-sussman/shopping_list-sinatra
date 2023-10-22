@@ -39,8 +39,28 @@ get "/item_details=:edit_at_index" do
   erb :item_details
 end
 
+get "/increment=:increment_at_index" do
+  @list_items = list.all
+  @index = params[:increment_at_index].to_i
+  @list_items[@index].increment!
+  erb :item_details
+end
+
+get "/decrement=:decrement_at_index" do
+  @list_items = list.all
+  @index = params[:decrement_at_index].to_i
+  @list_items[@index].decrement!
+  erb :item_details
+end
+
 get "/destroy=:destroy_at_index" do
   list.destroy(params[:destroy_at_index].to_i)
+  @list_items = list.all
+  erb :index
+end
+
+get "/clear" do
+  list.clear_checked
   @list_items = list.all
   erb :index
 end

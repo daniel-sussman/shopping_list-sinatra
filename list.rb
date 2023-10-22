@@ -27,10 +27,18 @@ class List
     save_csv
   end
 
+  def clear_checked
+    @items.reject! { |item| item.checked_off? }
+    save_csv
+  end
+
   private
 
   def load_csv
-    CSV.foreach(@csv_file_path) { |row| @items << ListItem.new(row[0], row[1].to_i, row[2] == 'true') }
+    CSV.foreach(@csv_file_path) do |row|
+      quantity = row[1].to_i unless row[1] == "not specified"
+      @items << ListItem.new(row[0], quantity, row[2] == 'true')
+    end
   end
 
   def save_csv
