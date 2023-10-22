@@ -1,0 +1,82 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Haettenschweiler, serif;
+  font-size: 20px;
+  margin: auto;
+  width: 100%;
+  text-align: left;
+  display: block;
+  color: green;
+  background-color: rgb(219, 209, 188);
+  border: 1px solid black;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  border: 1px solid #444;
+  height: 30px;
+  margin-bottom: 5px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  color: green;
+}
+
+a:hover {
+  color: darkolivegreen;
+}
+
+div.item {
+  flex-grow: 1;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.item-list a {
+  text-decoration: none;
+}
+
+.item-list a:hover {
+  text-decoration: line-through;
+}
+
+.checked_off a {
+  text-decoration: line-through;
+  color: darkolivegreen;
+}
+
+div.edit-box a {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+div.edit-box a:hover {
+  background-color: darkolivegreen;
+  text-decoration: none;
+}
+
+.navbar {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: 3px solid green;
+  display: block;
+}

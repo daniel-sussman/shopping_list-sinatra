@@ -1,0 +1,16 @@
+<ul class="item-list">
+  <% @list_items.each_with_index do |item, index| %>
+    <li>
+      <div class="item<%= " checked_off" if item.checked_off? %>">
+        <a href=<%= "/toggle=#{index}" %>>
+          <%= item.name %>
+        </a>
+        <% "  [#{item.quantity}]" if item.quantity > 1 %>
+      </div>
+      <div class="edit-box">
+        <a href=<%= "/item_details=#{index}" %>>Edit</a>
+      </div>
+    </li>
+  <% end %>
+  <li><a href="/new">Add a new item</a></li>
+</ul>

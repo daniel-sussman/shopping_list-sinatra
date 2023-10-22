@@ -1,0 +1,10 @@
+<% item = @list_items[@index] %>
+<p><%= item.name %></p>
+<p>Quantity:   <%= item.quantity %>
+  <a href="">+</a>
+  <a href="">-</a>
+</p>
+<p>Delete? (
+  <a href=<%= "/destroy=#{@index}" %>>y</a> /
+  <a href="/">n</a> )
+</p>
